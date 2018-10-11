@@ -37,6 +37,26 @@ const options = {
       "Dallas",
       "San Jose"
     ]
+  },
+  plotOptions: {
+    bar: {
+      horizontial: false
+    }
+  },
+  fill: {
+    colors: ["#f44336"]
+  },
+  dataLabels: {
+    enabled: false
+  },
+  title: {
+    text: "Largest Cities by Population",
+    align: "center",
+    margin: 20,
+    offsetY: 20,
+    style: {
+      fontSize: "25px"
+    }
   }
 };
 
@@ -45,3 +65,14 @@ const chart = new ApexCharts(document.querySelector("#chart"), options);
 
 // Render Chart
 chart.render();
+
+// Event Method
+document.querySelector("button").addEventListener("click", () => {
+  chart.updateOptions({
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    }
+  });
+});
